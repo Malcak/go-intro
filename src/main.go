@@ -2,31 +2,26 @@ package main
 
 import "fmt"
 
-func helloWorld(x string) {
-	fmt.Println("Hola mundo ", x)
-}
-
-func tripeArgument(a int, b int, c string) {
- fmt.Println(a, b, c)
-}
-
-func returnValue(a int) int {
-	return a * 2
-}
-
-func doubleReturn(a int) (c, d int) {
-	return a, a*2
-}
-
 func main() {
 
-	helloWorld("2")
-	tripeArgument(1, 2, "hola")
-	fmt.Println(returnValue(5))
-	value1, value2 := doubleReturn(5)
-	fmt.Println(value1, value2)
+	// ciclos
+	// for condicional
+	for i := 0; i < 10; i++{
+		fmt.Println(i)
+	}
 
-	value3, _ := doubleReturn(6)
-	fmt.Println(value3)
+	// for while
+	counter := 0
+	for counter < 10 {
+		fmt.Println(counter)
+		counter ++
+	}
+
+	// for forever
+	counterForever := 0
+	for {
+		fmt.Println(counterForever)
+		counterForever++
+	}
 
 }
