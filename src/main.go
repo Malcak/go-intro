@@ -2,30 +2,31 @@ package main
 
 import "fmt"
 
-func main(){
+func helloWorld(x string) {
+	fmt.Println("Hola mundo ", x)
+}
 
-	// declaracion de variables
-	helloMessage := "Hello"
-	worldMessage := "World"
+func tripeArgument(a int, b int, c string) {
+ fmt.Println(a, b, c)
+}
 
-	// print ln
-	fmt.Println(helloMessage, worldMessage)
+func returnValue(a int) int {
+	return a * 2
+}
 
-	// print f
-	nombre := "platzi"
-	cursos := 500
-	
-	fmt.Printf("%s tiene mas de %d cursos\n", nombre, cursos)
-	fmt.Printf("%v tiene mas de %v cursos\n", nombre, cursos)
+func doubleReturn(a int) (c, d int) {
+	return a, a*2
+}
 
-	// sprint f
+func main() {
 
-	message := fmt.Sprintf("%s tiene mas de %d cursos", nombre, cursos)
-	fmt.Println(message)
+	helloWorld("2")
+	tripeArgument(1, 2, "hola")
+	fmt.Println(returnValue(5))
+	value1, value2 := doubleReturn(5)
+	fmt.Println(value1, value2)
 
-	// tipo de datos
-
-	fmt.Printf("helloMessage: %T\n", helloMessage)
-	fmt.Printf("cursos: %T\n", cursos)
+	value3, _ := doubleReturn(6)
+	fmt.Println(value3)
 
 }
