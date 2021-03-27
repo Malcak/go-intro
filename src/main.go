@@ -4,24 +4,22 @@ import "fmt"
 
 func main() {
 
-	// ciclos
-	// for condicional
-	for i := 0; i < 10; i++{
-		fmt.Println(i)
+	switch modulo := 4%2; modulo {
+		case 0:
+			fmt.Println("Es par")
+		default:
+			fmt.Println("Es impar")
 	}
 
-	// for while
-	counter := 0
-	for counter < 10 {
-		fmt.Println(counter)
-		counter ++
-	}
-
-	// for forever
-	counterForever := 0
-	for {
-		fmt.Println(counterForever)
-		counterForever++
+	// sin condicion especificada
+	valor := 50
+	switch {
+		case valor > 100:
+			fmt.Println("Es mayor que 100")
+		case valor < 0:
+			fmt.Println("Es menor que 0")
+		default:
+			fmt.Println("Sin condicion")
 	}
 
 }
