@@ -1,31 +1,34 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
+
+func isPalindrome(str string) {
+	var strReverse string
+	str = strings.ToLower(str)
+	str = strings.ReplaceAll(" ", str, str)
+	for i := len(str) - 1; i >= 0; i-- {
+		strReverse += string(str[i])
+	}
+
+	if str == strReverse {
+		fmt.Println("Es palindromo")
+	} else {
+		fmt.Println("No es palindromo")
+	}
+}
 
 func main() {
 
-	// array
-	var array [4]int
-	array[0] = 1
-	array[1] = 2
-	fmt.Println(array, len(array), cap(array))
+	// 
+	slice := []string{"Hola", "Que", "Hace"}
 
-	// slice
-	slice := []int{0, 1, 2, 3, 4, 5, 6}
-	fmt.Println(slice, len(slice), cap(slice))
+	for i, valor := range slice {
+		fmt.Println(i, valor)
+	}
 
-	// metodos en el slice
-	fmt.Println(slice[0])
-	fmt.Println(slice[:3])
-	fmt.Println(slice[2:4])
-	fmt.Println(slice[4:])
-
-	// append
-	slice = append(slice, 7)
-	fmt.Println(slice, len(slice), cap(slice))
-
-	newSlice := []int{8, 9, 10}
-	slice = append(slice, newSlice...)
-	fmt.Println(slice, len(slice), cap(slice))
+	isPalindrome("Am a")
 
 }
