@@ -1,6 +1,6 @@
 package main
 
-import c "fmt"
+import "fmt"
 
 type pc struct {
 	ram int
@@ -8,35 +8,14 @@ type pc struct {
 	brand string
 }
 
-func (myPC pc) ping() {
-	c.Println(myPC.brand, "Pong")
-}
-
-func (myPC *pc) duplicateRam() {
-	myPC.ram = myPC.ram * 2
+func (myPC pc) String() string {
+	return fmt.Sprintf("{ram:%d, disk:%d, brand:%s}", myPC.ram, myPC.disk, myPC.brand)
 }
 
 func main() {
 	
-	a := 50
-	b := &a
+	myPC := pc{ram: 16, disk: 512, brand: "apple"}
 
-	c.Println(a, b)
-	c.Println(b, *b)
-
-	*b = 100
-
-	c.Println(a)
-
-	myPC := pc{ram:16, disk: 512, brand: "apple"}
-	c.Println(myPC)
-
-	myPC.ping()
-
-	c.Println(myPC)
-	myPC.duplicateRam()
-	c.Println(myPC)
-	myPC.duplicateRam()
-	c.Println(myPC)
+	fmt.Println(myPC)
 
 }
